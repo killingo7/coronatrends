@@ -6,8 +6,8 @@ def init_google_trends():
     return pytrend
 
 
-def searches_for(pytrend, keyword, timeframe, region):
-    pytrend.build_payload(kw_list=[keyword], cat=0, timeframe=timeframe, geo=region, gprop='')
+def searches_for(pytrend, keywords, timeframe='today 3-m', region='DE-BW'):
+    pytrend.build_payload(kw_list=keywords, cat=0, timeframe=timeframe, geo=region, gprop='')
     data = pytrend.interest_over_time()
     return data
 
